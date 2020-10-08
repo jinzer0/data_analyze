@@ -15,7 +15,7 @@ class NewTkinter():
 
         imgnumber = 6
 
-        img = tk.PhotoImage(file=f"{imgnumber}.png")
+        img = tk.PhotoImage(file=f"/Users/kjy/Desktop/testing/images/{imgnumber}.png")
 
         imglabel = tk.Label(window, image=img)
         imglabel.pack(side="left")
