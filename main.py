@@ -121,31 +121,26 @@ ggsave("/Users/kjy/Desktop/untitled/images/6.png", width=9, height=9, unit="cm")
 
             newr.close()
 
+        analcomment = tk.StringVar()
 
         def Fileanalyze():
             os.system("/Library/Frameworks/R.framework/Versions/4.0/Resources/bin/Rscript /Users/kjy/Desktop/testing/test.R")
-            newwin= tk.Tk()
-            newwin.geometry("1000x800+200+180")
-            newwin.title("Analyze Result")
-            newwin.resizable(True, True)
-            img = tk.PhotoImage(file="1.png")
-            imglabel = tk.Label(image=img)
-            imglabel.pack()
+            analcomment.set("분석을 완료하였습니다.")
 
 
 
         def Graph1():
-            os.system("/opt/anaconda3/bin/python3 /Users/kjy/Desktop/python/pycharmFIRST/무제 폴더 24/analyze.py")
+            os.system("/opt/anaconda3/bin/python3 /Users/kjy/Desktop/python/data_analyze/analyze_1.py")
         def Graph2():
-            print("2")
+            os.system("/opt/anaconda3/bin/python3 /Users/kjy/Desktop/python/data_analyze/analyze_2.py")
         def Graph3():
-            print("3")
+            os.system("/opt/anaconda3/bin/python3 /Users/kjy/Desktop/python/data_analyze/analyze_3.py")
         def Graph4():
-            print("4")
+            os.system("/opt/anaconda3/bin/python3 /Users/kjy/Desktop/python/data_analyze/analyze_4.py")
         def Graph5():
-            print("5")
+            os.system("/opt/anaconda3/bin/python3 /Users/kjy/Desktop/python/data_analyze/analyze_5.py")
         def Graph6():
-            print("6")
+            os.system("/opt/anaconda3/bin/python3 /Users/kjy/Desktop/python/data_analyze/analyze_6.py")
 
         biganaltitle = tk.Label(
             self.fileload, text="경제 지표 분석", font=title).pack(side="top", pady=50)
@@ -163,8 +158,32 @@ ggsave("/Users/kjy/Desktop/untitled/images/6.png", width=9, height=9, unit="cm")
         self.analyze = tk.Frame()
         self.analyze.pack(side="bottom", ipady=150)
         analyzebutton = tk.Button(
-            self.analyze, text="분석하기", font=buttonfont, command=Graph1)
+            self.analyze, text="분석하기", font=buttonfont, command=Fileanalyze)
         analyzebutton.pack(ipadx=40)
+
+
+        analyzetext = tk.Label(self.analyze, textvariable = analcomment, font=explain)
+        analyzetext.pack(pady=40)
+        analcomment.set("먼저 분석을 진행해주세요.")
+
+
+        graph1button = tk.Button(self.analyze, text="그래프1 분석", font=buttonfont, command=Graph1)
+        graph1button.pack(side="left", padx=10)
+
+        graph2button = tk.Button(self.analyze, text="그래프2 분석", font=buttonfont, command=Graph2)
+        graph2button.pack(side="left", padx=10)
+
+        graph3button = tk.Button(self.analyze, text="그래프3 분석", font=buttonfont, command=Graph3)
+        graph3button.pack(side="left", padx=10)
+
+        graph4button = tk.Button(self.analyze, text="그래프4 분석", font=buttonfont, command=Graph4)
+        graph4button.pack(side="left", padx=10)
+
+        graph5button = tk.Button(self.analyze, text="그래프5 분석", font=buttonfont, command=Graph5)
+        graph5button.pack(side="left", padx=10)
+
+        graph6button = tk.Button(self.analyze, text="그래프6 분석", font=buttonfont, command=Graph6)
+        graph6button.pack(side="left", padx=10)
 
         startanal = tk.Frame(self)
         startanal.pack(side="top")
