@@ -25,7 +25,7 @@ class NewTkinter():
         result = tk.Label(font=explain,textvariable=comment)
         result.pack(pady=100)
 
-        comment.set("고맙숩니다 훠훠 쫘좡면 같운 거 듸쉬고 싶숩니꽈 훠훠")
+        comment.set("2번")
 
 
 

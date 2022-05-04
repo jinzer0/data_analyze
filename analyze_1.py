@@ -25,7 +25,7 @@ class NewTkinter():
         result = tk.Label(font=explain,textvariable=comment)
         result.pack(pady=100)
 
-        comment.set("문재앙은 개새끼입니다. 대신 집값 올려줘서 고맙숩니다 훠훠")
+        comment.set("1번")
 
 
 
